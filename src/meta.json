@@ -1,0 +1,9 @@
+{
+  "$schema": "file:../meta.schema.json",
+
+  "name": "UserScript-Webhallen-filter",
+  "namespace": "webhallen-filter",
+  "description": "Simple Webhallen filter",
+  "version": "1.0.0",
+  "include": [ "*" ]
+}
