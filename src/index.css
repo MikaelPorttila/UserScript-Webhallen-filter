@@ -1,0 +1,35 @@
+.wbusf-display-none {
+    display: none
+}
+
+#whusf-menu {
+    border:1px solid #d9e5ee;
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+#whusf-menu a, #whusf-menu a:visited{
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#whusf-menu ul {
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
+#whusf-menu ul li {
+    margin-bottom: 5px;
+}
+
+#whusf-add-button {
+    padding: 4px;
+}
+
+#whusf-options { 
+    margin-top: 3px;
+}
+#whusf-options li a {
+    margin-right: 3px;
+}
