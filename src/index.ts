@@ -3,13 +3,17 @@ export class FilterScript {
     constructor(){}
 
     public run(){
-        this.getLinksByTexts("global")
-            .forEach((el) => {
-                const prodItem = this.closestParentByClass('.prod_list_row', <HTMLElement>el);
-                if(prodItem != null){
-                    (<HTMLElement>prodItem.parentElement).removeChild(prodItem);
-                }
-            });
+        this.removeLinks();
+    }
+
+    private removeLinks(){
+        this.getLinksByTexts("global").forEach((element: HTMLElement) => {
+
+            const prodItem = this.closestParentByClass('.prod_list_row', element);
+            if (prodItem != null && prodItem.parentElement != null) {
+                prodItem.parentElement.removeChild(prodItem);
+            }
+        });
     }
 
     private getLinksByTexts(...texts: string[]) {
@@ -30,7 +34,6 @@ export class FilterScript {
     }   
 
     private closestParentByClass(className: string, el: HTMLElement): HTMLElement | null {
-        
 
         let currentNode = el.parentElement;
         while (currentNode != null){
