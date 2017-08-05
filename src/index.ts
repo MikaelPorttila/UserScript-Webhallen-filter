@@ -1,13 +1,13 @@
 export class FilterScript {
 
-    constructor(){}
+    constructor(private texts: string[]){}
 
     public run(){
         this.removeLinks();
     }
 
     private removeLinks(){
-        this.getLinksByTexts("global").forEach((element: HTMLElement) => {
+        this.getLinksByTexts(this.texts).forEach((element: HTMLElement) => {
 
             const prodItem = this.closestParentByClass('.prod_list_row', element);
             if (prodItem != null && prodItem.parentElement != null) {
@@ -16,7 +16,7 @@ export class FilterScript {
         });
     }
 
-    private getLinksByTexts(...texts: string[]) {
+    private getLinksByTexts(texts: string[]) {
 
         const result: Element[] = [];
         const queryResults = document.querySelectorAll('.prod_list_row a');
@@ -49,5 +49,5 @@ export class FilterScript {
     } 
 }
 
-const runtime = new FilterScript();
+const runtime = new FilterScript(["global", "spinner"]);
 window.addEventListener('load', () => runtime.run(), false);
