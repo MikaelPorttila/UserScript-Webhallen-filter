@@ -3,9 +3,7 @@ export class Memory {
 
     private sub: Sub = new Sub();
     private memorySpacePrefix = Object.freeze("whusf"); 
-
-  /*   private tracker: [{key: string, invokers: (key: string, value: any) => void[]}] = <any>[]; */
-    
+  
     private getKey(key: string): string {
         return this.memorySpacePrefix + key;
     }
