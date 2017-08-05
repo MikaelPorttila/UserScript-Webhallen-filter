@@ -2,7 +2,7 @@
 // @name        UserScript-Webhallen-filter
 // @namespace   webhallen-filter
 // @description Simple Webhallen filter
-// @version     1.0.1
+// @version     1.0.2
 // @downloadURL https://github.com/MikaelPorttila/UserScript-Webhallen-filter/raw/master/dist/UserScript-Webhallen-filter.user.js
 // @include     https://www.webhallen.com/se-sv/medlem/*/erbjudanden
 // @include     https://www.webhallen.com/medlem/*/erbjudanden/mest_salda/alla/*
