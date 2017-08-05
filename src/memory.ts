@@ -21,9 +21,9 @@ export class Memory {
 
     public get<T>(key: string): T | null {
         key = this.getKey(key);
-        const serilizedItem = localStorage.getItem(key);
-        if(!!serilizedItem){
-            return <T>JSON.parse(<string>serilizedItem);
+        const serializedItem = localStorage.getItem(key);
+        if (!!serializedItem){
+            return <T>JSON.parse(<string>serializedItem);
         }
         return null;
     }

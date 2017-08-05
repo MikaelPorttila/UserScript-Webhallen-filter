@@ -7,9 +7,7 @@ import {
 } from './dom';
 
 export class Filter {
-
-    private hideCount: number = 0; 
-    
+  
     constructor(private memory: Memory) {
         this.memory.track<string[]>(Constants.LOCAL_STORAGE_KEY_FILTERS, (key, filters) => this.filterContent(filters));
     }
