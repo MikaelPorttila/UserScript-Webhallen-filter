@@ -1,7 +1,10 @@
+import { Filter } from './../filter';
 import { Subscription } from './../sub';
 import { Constants } from './../constants';
 import { Memory } from './../memory';
 import { prepend } from './../dom';
+
+/* import * as template from './menu.html';  */
 
 export class Menu {
 
@@ -16,7 +19,7 @@ export class Menu {
         }
 
     public build(): void {
-
+        
         setTimeout(() => {
 
             this.menuContainer = <HTMLElement>document.querySelector(<string>this.target);
@@ -26,6 +29,7 @@ export class Menu {
             prepend(this.menuContainer, this.menuDiv);
 
             this.renderMenu(this.memory.get<string[]>(Constants.LOCAL_STORAGE_KEY_FILTERS) || []);
+            
         }, 0);
     }
 
@@ -95,7 +99,7 @@ export class Menu {
 
     private renderMenu(filters: string[]){
 
-        let filterList = "";
+         let filterList = "";
         
         for (var index = 0; index < filters.length; index++) {
             const filter = filters[index];
@@ -114,7 +118,7 @@ export class Menu {
                     <button id="whusf-add-button" class="button s18 checkout">Add filter</button>
                 </div>
             `;
-        this.addHandlers();
+        this.addHandlers(); 
     }
 
 }

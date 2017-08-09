@@ -2,6 +2,7 @@ import { Constants } from './constants';
 import { Filter } from './filter';
 import { Menu } from './components/menu';
 import { Memory } from './memory';
+
 export class App {
 
     private memory: Memory;

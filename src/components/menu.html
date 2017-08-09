@@ -1,0 +1,10 @@
+<div>
+    <a href="#" id="whusf-options-toggler">Filter settings ({{filterCount}} active filters)</a>
+</div>
+<div id="whusf-options" ${ !this.displayMenuOptions ? 'class="wbusf-display-none"' : '' }>
+    <ul>
+        ${filterList}
+    </ul>
+
+    <button id="whusf-add-button" class="button s18 checkout">Add filter</button>
+</div>
