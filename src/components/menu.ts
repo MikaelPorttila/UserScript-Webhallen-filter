@@ -3,14 +3,16 @@ import { Subscription } from './../sub';
 import { Constants } from './../constants';
 import { Memory } from './../memory';
 import { prepend } from './../dom';
-
-/* import * as template from './menu.html';  */
+const path = require('path');
+import template from './menu.html';  
+import * as Dot from 'dot';
 
 export class Menu {
 
     private menuContainer: HTMLElement;
     private menuDiv: HTMLElement;
     private displayMenuOptions: boolean = false;
+    private readonly viewTemplate = Dot.template(template); 
 
     constructor(
         private target: string,
@@ -98,27 +100,13 @@ export class Menu {
     }
 
     private renderMenu(filters: string[]){
+ 
+        this.menuDiv.innerHTML = this.viewTemplate({ 
+            filters: filters,
+            displayMenuOptions: this.displayMenuOptions
+        });
 
-         let filterList = "";
-        
-        for (var index = 0; index < filters.length; index++) {
-            const filter = filters[index];
-            filterList += `<li><a href="#" class="whusf-options-filter-delete" data-filter="${filter}">&#10006;</a>${filter}</li>`;
-        }
-        
-        this.menuDiv.innerHTML = `
-                <div>
-                    <a href="#" id="whusf-options-toggler">Filter settings (${filters.length} active filters)</a>
-                </div>
-                <div id="whusf-options" ${ !this.displayMenuOptions ? 'class="wbusf-display-none"' : '' }>
-                    <ul>
-                        ${filterList}
-                    </ul>
-                
-                    <button id="whusf-add-button" class="button s18 checkout">Add filter</button>
-                </div>
-            `;
-        this.addHandlers(); 
+        this.addHandlers();
     }
 
 }

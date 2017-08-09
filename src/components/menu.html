@@ -1,10 +1,15 @@
 <div>
-    <a href="#" id="whusf-options-toggler">Filter settings ({{filterCount}} active filters)</a>
+    <a href="#" id="whusf-options-toggler">Filter settings ({{=it.filters.length}} active filters)</a>
 </div>
-<div id="whusf-options" ${ !this.displayMenuOptions ? 'class="wbusf-display-none"' : '' }>
+<div id="whusf-options" class="{{=it.displayMenuOptions ? '' : 'wbusf-display-none' }}">
+    {{?it.filters.length}}
     <ul>
-        ${filterList}
+        {{~ it.filters :filter}}
+        <li>
+            <a href="#" class="whusf-options-filter-delete" data-filter="{{=filter}}">&#10006;</a>{{=filter}}
+        </li>
+        {{~}}
     </ul>
-
+    {{?}}
     <button id="whusf-add-button" class="button s18 checkout">Add filter</button>
 </div>

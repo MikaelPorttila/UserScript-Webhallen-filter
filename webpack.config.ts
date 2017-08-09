@@ -61,10 +61,15 @@ export default <webpack.Configuration> {
                     loader: "sass-loader" // compiles Sass to CSS
                 }]
             },
-            { 
+            {
+                test: /\.html$/,
+                exclude: /node_modules/,
+                loader: "html-loader?exportAsEs6Default"
+            }
+           /*  { 
                 test: /\.html$/,
                 use: 'raw-loader'
-            }
+            } */
         ]
     },
     plugins: [
